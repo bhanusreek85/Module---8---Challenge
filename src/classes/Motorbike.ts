@@ -14,6 +14,10 @@ class Motorbike extends Vehicle {
   year: number;
   weight: number;
   topSpeed: number;
+  frontWheelDiameter: number;
+  frontWheelBrand: string;
+  rareWheelDiameter: number;
+  rareWheelBrand: string;
   wheels: Wheel[];
   // TODO: Create a constructor that accepts the properties of the Motorbike class
   // TODO: The constructor should call the constructor of the parent class, Vehicle
@@ -27,7 +31,11 @@ class Motorbike extends Vehicle {
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[]
+    frontWheelDiameter:number,
+    frontWheelBrand:string,
+    rareWheelDiameter:number,
+    rareWheelBrand:string,
+    wheels: Wheel[],
   ) {
     super();
     this.vin = vin;
@@ -37,8 +45,12 @@ class Motorbike extends Vehicle {
     this.year = year;
     this.weight = weight;
     this.topSpeed = topSpeed;
+    this.frontWheelDiameter = frontWheelDiameter;
+    this.frontWheelBrand=frontWheelBrand;
+    this.rareWheelDiameter=rareWheelDiameter;
+    this.rareWheelBrand=rareWheelBrand;
     if (wheels.length !== 2) {
-      this.wheels = [new Wheel(), new Wheel()];
+      this.wheels = [new Wheel(this.frontWheelDiameter, this.frontWheelBrand), new Wheel(this.rareWheelDiameter,this.rareWheelBrand)]
     } else {
       this.wheels = wheels;
     }
@@ -73,12 +85,6 @@ class Motorbike extends Vehicle {
     );
     console.log(
       `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
-    );
-    console.log(
-      `Wheel 3: ${this.wheels[2].getDiameter} inch with a ${this.wheels[2].getTireBrand} tire`
-    );
-    console.log(
-      `Wheel 4: ${this.wheels[3].getDiameter} inch with a ${this.wheels[3].getTireBrand} tire`
     );
   }
 }

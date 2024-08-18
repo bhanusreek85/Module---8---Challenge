@@ -13,8 +13,7 @@ class Car extends Vehicle {
   weight: number;
   topSpeed: number;
   wheels: Wheel[];
-
-  // Constructor for the Car class
+   // Constructor for the Car class
   constructor(
     vin: string,
     color: string,
@@ -23,7 +22,7 @@ class Car extends Vehicle {
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[]
+    wheels: Wheel[],
   ) {
     // Call the constructor of the parent class, Vehicle
     super();
