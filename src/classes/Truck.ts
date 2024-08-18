@@ -32,7 +32,7 @@ class Truck extends Vehicle implements AbleToTow {
     weight: number,
     topSpeed: number,
     wheels: Wheel[],
-    towingCapacity: number
+    towingCapacity: number,
   ) {
     // Call the constructor of the parent class, Vehicle
     super();
